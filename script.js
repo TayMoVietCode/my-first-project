@@ -97,6 +97,7 @@ Firework.prototype.update = function( index ) {
 	// speed up the firework
 	this.speed *= this.acceleration;
 	
+	// get the current velocities based on angle and speed
 	var vx = Math.cos( this.angle ) * this.speed,
 			vy = Math.sin( this.angle ) * this.speed;
 	// how far will the firework have traveled with velocities applied?
@@ -127,6 +128,7 @@ Firework.prototype.draw = function() {
 	// draw the target for this firework with a pulsing circle
 	ctx.arc( this.tx, this.ty, this.targetRadius, 0, Math.PI * 2 );
 	ctx.stroke();
+}
 
 // create particle
 function Particle( x, y ) {
